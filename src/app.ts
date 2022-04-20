@@ -1,6 +1,5 @@
 require('dotenv').config();
 import express from 'express';
-import cors from 'cors';
 import blogPostRouter from './routes/blogPosts';
 import userRouter from './routes/users';
 import identityRouter from './routes/identity';
@@ -12,7 +11,6 @@ export const client = new MongoClient(process.env.DB_CONN_STRING);
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/blogPost', blogPostRouter);
@@ -27,6 +25,6 @@ app.get('/', (req, res) => {
 
 app.listen(process.env.PORT, () => {
     return console.log(
-        `Express is listening at http://localhost:${process.env.SERVER_PORT}`
+        `Express is listening.`
     );
 });
