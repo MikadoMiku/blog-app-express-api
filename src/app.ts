@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-app.listen(process.env.SERVER_PORT, () => {
+app.listen(process.env.PORT, () => {
     return console.log(
         `Express is listening at http://localhost:${process.env.SERVER_PORT}`
     );
