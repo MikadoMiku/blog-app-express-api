@@ -2,12 +2,10 @@ import * as mongoDB from 'mongodb';
 import { client as mongoClient } from "../app"
 
 export interface IQueryParams {
-    //Indexer - the key and value pairs can be anything.
     [param: string]: any;
 }
 
 export class BaseService<TEntity> {
-    // private mongoClient = new mongoDB.MongoClient(process.env.DB_CONN_STRING);
 
     constructor(protected collection: string) {}
 
